@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
 """
@@ -16,6 +15,9 @@ requests.packages.urllib3.disable_warnings()
 import os
 import json
 import time
+
+zyh_email = "zouyuhang@pku.edu.cn"
+zyh_pwd = "zouyuhang666"
 
 
 
@@ -163,10 +165,11 @@ def generate_markdown_text(response_data, session):
 
 
 if __name__ == '__main__':
-    session = login(sys.argv[1], sys.argv[2]) # 登录
+    # session = login(sys.argv[1], sys.argv[2]) # 登录
+    session = login(zyh_email, zyh_pwd) # 登录
     response_data = get_accepted_problems(session) # 获取所有通过的题目列表
     markdown_text = generate_markdown_text(response_data, session) # 生成Markdown文本
 
     # 更新README.md文件
-    with open("README.md", "w") as f:
+    with open("README.md", "w", encoding="utf-8") as f:
         f.write(markdown_text)
