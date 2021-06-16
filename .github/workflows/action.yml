@@ -32,11 +32,6 @@ jobs:
           pip install -r requirements.txt
         if: steps.pip-cache.outputs.cache-hit != 'true'
 
-      - name: 'Working'
-        env:
-          EMAIL: ${{ secrets.LEETCODE_EMAIL }}
-          PWD: ${{ secrets.LEETCODE_PASSWORD }}
-
       - name: Get LeetCode Data
         run: python leetcode.py ${{ secrets.LEETCODE_EMAIL }} ${{ secrets.LEETCODE_PASSWORD }}
 
