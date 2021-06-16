@@ -165,8 +165,8 @@ def generate_markdown_text(response_data, session):
 
 
 if __name__ == '__main__':
-    # session = login(sys.argv[1], sys.argv[2]) # 登录
-    session = login(zyh_email, zyh_pwd) # 登录
+    session = login(sys.argv[1], sys.argv[2]) # 登录
+    # session = login(zyh_email, zyh_pwd) # 登录
     response_data = get_accepted_problems(session) # 获取所有通过的题目列表
     markdown_text = generate_markdown_text(response_data, session) # 生成Markdown文本
 
