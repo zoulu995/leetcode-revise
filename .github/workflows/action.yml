@@ -41,7 +41,7 @@ jobs:
           git config --global user.email zouyuhang@pku.edu.cn
           git config --global user.name TomZou
           git add .
-          git commit -m "update" -a
+          git commit --allow-empty -m "Empty"
 
 
       - name: Push changes
